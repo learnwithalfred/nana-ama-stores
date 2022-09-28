@@ -1,0 +1,11 @@
+<% flash.each do |name, msg| %>
+<% if msg.is_a?(String) %>
+<div class="flash__message">
+  <div
+    class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>"
+    role="alert"
+  >
+    <div id="flash_<%= name %>"><%= msg %></div>
+  </div>
+</div>
+<% end %> <% end %>
