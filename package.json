@@ -11,6 +11,8 @@
     ]
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "bundle exec rubocop -a",
+    "prepush": "bundle exec rubocop -a"
   }
 }
