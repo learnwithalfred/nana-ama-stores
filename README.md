@@ -1,11 +1,46 @@
 # Offinso District Stores data collection app
 
-> We created a to collect stores data and revenue 
+> We created a to collect stores data and revenue
+
+## Built With
+
+- Javascript
+- Ruby
+- Ruby on Rails
+
+### Prerequisites
+
+- Node.js version 16.4.2
+- Ruby version 3.1.2
+- Rails version 7.0.3
+- Make sure you are using the latest version of ruby `rvm use 3.1.2`
 
 ## Getting Started 🙌
 
 To get a local copy up and running follow these simple example steps.
+Verify ruby and rails installation
 
+```
+  ruby -v
+  rails -v
+```
+
+## Clone repository and start application
+
+```
+git clone https://github.com/learnwithalfred/furry-invention.git
+cd furry-invention
+bundle install
+yarn install
+rails db:create
+rails db:migrate
+./bin/dev
+
+```
+
+## Start application
+
+`./bin/dev`
 
 👤 **Alfred Boateng**
 
