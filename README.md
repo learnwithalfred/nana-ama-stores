@@ -1,25 +1,34 @@
-# README
+# Offinso District Stores data collection app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> We created a to collect stores data and revenue 
 
-Things you may want to cover:
+## Getting Started 🙌
 
-* Ruby version
+To get a local copy up and running follow these simple example steps.
 
-* System dependencies
 
-* Configuration
+👤 **Alfred Boateng**
 
-* Database creation
+- GitHub: [@learnwithalfred](https://github.com/learnwithalfred)
+- Twitter: [@kb_alfred](https://twitter.com/kb_alfred)
+- LinkedIn: [@learnwithalfred](https://www.linkedin.com/in/learnwithalfred/)
 
-* Database initialization
+## 🤝 Contributing
 
-* How to run the test suite
+Contributions, issues, and feature requests are welcome!
 
-* Services (job queues, cache servers, search engines, etc.)
+Feel free to check the [issues page](../../issues/).
 
-* Deployment instructions
+## Show your support
 
-* ...
-# furry-invention
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
