@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :sectors
   get "errors/not_found"
   get "errors/internal_server_error"
   get "/404", to: "errors#not_found", via: :all
