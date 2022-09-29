@@ -13,27 +13,37 @@
 
   <div class="my-5">
     <%= form.label :assembly_id %>
-    <%= form.text_field :assembly_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        <div class="mt-1 rounded-md shadow-sm">
+      <%=form.collection_select :assembly_id, Assembly.order(:name), :id, :name , class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" %>
+    </div>
   </div>
 
   <div class="my-5">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            <div class="mt-1 rounded-md shadow-sm">
+      <%=form.collection_select :user_id, User.order(:name), :id, :name , class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" %>
+    </div>
   </div>
 
   <div class="my-5">
     <%= form.label :sub_district_id %>
-    <%= form.text_field :sub_district_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      <div class="mt-1 rounded-md shadow-sm">
+      <%=form.collection_select :sub_district_id, SubDistrict.order(:name), :id, :name , class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" %>
+    </div>
   </div>
 
   <div class="my-5">
     <%= form.label :community_id %>
-    <%= form.text_field :community_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        <div class="mt-1 rounded-md shadow-sm">
+      <%=form.collection_select :community_id, Community.order(:name), :id, :name , class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" %>
+    </div>
   </div>
 
   <div class="my-5">
     <%= form.label :sector_id %>
-    <%= form.text_field :sector_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            <div class="mt-1 rounded-md shadow-sm">
+      <%=form.collection_select :sector_id, Sector.order(:name), :id, :name , class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" %>
+    </div>
   </div>
 
   <div class="my-5">
