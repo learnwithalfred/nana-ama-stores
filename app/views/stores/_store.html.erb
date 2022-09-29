@@ -1,0 +1,72 @@
+<div id="<%= dom_id store %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Assembly:</strong>
+    <%= store.assembly_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= store.user_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Sub district:</strong>
+    <%= store.sub_district_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Community:</strong>
+    <%= store.community_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Sector:</strong>
+    <%= store.sector_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Serial number:</strong>
+    <%= store.serial_number %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Digital address:</strong>
+    <%= store.digital_address %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Purpose of structure:</strong>
+    <%= store.purpose_of_structure %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Mode of structure:</strong>
+    <%= store.mode_of_structure %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Materials used for walls:</strong>
+    <%= store.materials_used_for_walls %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Address:</strong>
+    <%= store.address %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Is there network mast:</strong>
+    <%= store.is_there_network_mast %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Comments:</strong>
+    <%= store.comments %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this store", store, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this store', edit_store_path(store), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

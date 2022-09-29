@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, on: :create
 
   before_save :to_lowercase
+  has_many :stores
 
   enum role: [:user, :collector, :procurement, :it, :statistics, :admin, :super_admin]
   after_initialize :set_default_role, if: :new_record?

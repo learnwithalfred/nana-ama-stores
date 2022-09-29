@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_29_154045) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_29_155538) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_154045) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.bigint "assembly_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "sub_district_id", null: false
+    t.bigint "community_id", null: false
+    t.bigint "sector_id", null: false
+    t.string "serial_number", null: false
+    t.string "digital_address", null: false
+    t.string "purpose_of_structure", null: false
+    t.string "mode_of_structure", null: false
+    t.string "materials_used_for_walls", null: false
+    t.text "address", null: false
+    t.boolean "is_there_network_mast", null: false
+    t.text "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assembly_id"], name: "index_stores_on_assembly_id"
+    t.index ["community_id"], name: "index_stores_on_community_id"
+    t.index ["sector_id"], name: "index_stores_on_sector_id"
+    t.index ["sub_district_id"], name: "index_stores_on_sub_district_id"
+    t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
   create_table "sub_districts", force: :cascade do |t|
@@ -56,4 +79,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_154045) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "stores", "assemblies"
+  add_foreign_key "stores", "communities"
+  add_foreign_key "stores", "sectors"
+  add_foreign_key "stores", "sub_districts"
+  add_foreign_key "stores", "users"
 end
