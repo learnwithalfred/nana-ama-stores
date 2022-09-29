@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :assemblies
+  resources :communities
   resources :sub_districts
   resources :sectors
   get "errors/not_found"
