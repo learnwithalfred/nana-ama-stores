@@ -1,12 +1,12 @@
 <div id="<%= dom_id store_tax %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">Store:</strong>
-    <%= store_tax.store_id %>
+    <%= store_tax.store.serial_number %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Tax:</strong>
-    <%= store_tax.tax_id %>
+    <%= store_tax.tax.name %>
   </p>
 
   <% if action_name != "show" %>

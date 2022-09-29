@@ -1,27 +1,27 @@
 <div id="<%= dom_id store %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">Assembly:</strong>
-    <%= store.assembly_id %>
+    <%= store.assembly.name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= store.user_id %>
+    <strong class="block font-medium mb-1">Collected By:</strong>
+    <%= store.user.name %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Sub district:</strong>
-    <%= store.sub_district_id %>
+    <%= store.sub_district.name %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Community:</strong>
-    <%= store.community_id %>
+    <%= store.community.name %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Sector:</strong>
-    <%= store.sector_id %>
+    <%= store.sector.name %>
   </p>
 
   <p class="my-5">

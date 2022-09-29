@@ -1,7 +1,7 @@
 <div id="<%= dom_id payment %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= payment.user_id %>
+    <strong class="block font-medium mb-1">Collected By:</strong>
+    <%= payment.user.name %>
   </p>
 
   <p class="my-5">
@@ -11,7 +11,7 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Store:</strong>
-    <%= payment.store_id %>
+    <%= payment.store.serial_number %>
   </p>
 
   <p class="my-5">
@@ -36,7 +36,7 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Tax:</strong>
-    <%= payment.tax_id %>
+    <%= payment.tax.name %>
   </p>
 
   <% if action_name != "show" %>
