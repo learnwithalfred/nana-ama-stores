@@ -16,4 +16,6 @@ class Store < ApplicationRecord
   belongs_to :sub_district
   belongs_to :community
   belongs_to :sector
+  has_many :store_taxes, dependent: :destroy
+  has_many :taxes, through: :store_taxes
 end

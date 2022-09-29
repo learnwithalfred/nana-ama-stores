@@ -8,4 +8,6 @@ class Tax < ApplicationRecord
   validates :period, presence: true, length: { minimum: MIN_LENGTH, maximum: MAX_LENGTH }
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 10000 }
   belongs_to :user
+  has_many :store_taxes, dependent: :destroy
+  has_many :stores, through: :store_taxes
 end

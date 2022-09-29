@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_29_164754) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_29_185323) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_164754) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "store_taxes", force: :cascade do |t|
+    t.bigint "store_id", null: false
+    t.bigint "tax_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_store_taxes_on_store_id"
+    t.index ["tax_id"], name: "index_store_taxes_on_tax_id"
   end
 
   create_table "stores", force: :cascade do |t|
@@ -109,6 +118,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_164754) do
   add_foreign_key "payments", "stores"
   add_foreign_key "payments", "taxes"
   add_foreign_key "payments", "users"
+  add_foreign_key "store_taxes", "stores"
+  add_foreign_key "store_taxes", "taxes"
   add_foreign_key "stores", "assemblies"
   add_foreign_key "stores", "communities"
   add_foreign_key "stores", "sectors"
