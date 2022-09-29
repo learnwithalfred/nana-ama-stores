@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :sub_districts
   resources :sectors
   get "errors/not_found"
   get "errors/internal_server_error"
