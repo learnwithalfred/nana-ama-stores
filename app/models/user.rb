@@ -11,7 +11,7 @@ class User < ApplicationRecord
     uniqueness: { case_sensitive: false },
     length: { maximum: MAX_EMAIL_LENGTH },
     format: { with: VALID_EMAIL_REGEX }
-  validates :password, length: { in: PASSWORD_LENGTH }
+  # validates :password, length: { in: PASSWORD_LENGTH }
 
   before_save :to_lowercase
   has_many :stores
