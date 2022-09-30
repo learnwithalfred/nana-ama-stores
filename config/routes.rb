@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get "admin_dashboard/index"
   resources :store_taxes
   resources :payments
   resources :taxes
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
   devise_for :users, path: "auth",
     path_names: { sign_in: "login", sign_out: "logout", password: "secret", confirmation: "verification" }
   resources :users
+  get "/admin", to: "admin_dashboard#index"
   root "home#index"
 end
