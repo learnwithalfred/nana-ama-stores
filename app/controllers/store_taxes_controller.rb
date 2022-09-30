@@ -2,6 +2,8 @@
 
 class StoreTaxesController < ApplicationController
   before_action :set_store_tax, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /store_taxes or /store_taxes.json
   def index

@@ -2,6 +2,8 @@
 
 class SubDistrictsController < ApplicationController
   before_action :set_sub_district, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /sub_districts or /sub_districts.json
   def index
