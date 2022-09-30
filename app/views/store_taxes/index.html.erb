@@ -1,14 +1,87 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<div class="flex  justify-center px-4 sm:px-6 lg:px-8">
+  <div class="w-full lg:max-w-[90%] md:max-w-[100%] ">
+    <div class="mt-5 flex flex-col">
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Store taxes</h1>
-    <%= link_to 'New store tax', new_store_tax_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
+      <div class="bg-gray-50">
+        <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+            <span class="block">Store Taxes List</span>
+          </h2>
+          <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div class="ml-3 inline-flex rounded-md shadow">
+              <%= link_to "Add store taxes", new_store_tax_path, class:"inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700" %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div id="store_taxes" class="min-w-full">
-    <%= render @store_taxes %>
+      <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <div class="border-b shadow md:custom-box-shadow overflow-hidden border-gray-200">
+            <table class="divide-y min-w-full divide-gray-200">
+              <thead>
+                <tr>
+                  <th class="w-1">#</th>
+                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    Store Number
+                  </th>
+                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    Tax name
+                  </th>
+                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    Amount
+                  </th>
+                  <!-- <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    Period
+                  </th> -->
+
+                  <th class="w-3"></th>
+
+                  <% if can? :update, @store_taxes %>
+                  <th class="w-3"></th>
+                  <% end %>
+                  <% if can? :destroy, @store_taxes %>
+                  <th class="w-3"></th>
+                  <% end %>
+
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white">
+                <% @store_taxes.each_with_index do |store_tax, index| %>
+                <tr>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= index + 1 %></td>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= store_tax.store.serial_number %></td>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= store_tax.tax.name %>
+                  </td>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= store_tax.tax.amount %>
+                  </td>
+                  <!-- <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= store_tax.tax.period %>
+                  </td> -->
+                  <td class="px-6 text-left py-4"><%= link_to 'More', store_tax %></td>
+
+                  <% if can? :update, @store_taxes %>
+                  <td class="px-6 text-left py-4"><%= link_to 'Edit', edit_store_tax_path(store_tax) %></td>
+                  <% end %>
+                  <% if can? :destroy, @store_taxes %>
+                  <td class="px-6 text-left py-4">
+                    <%= link_to 'Destroy', store_tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

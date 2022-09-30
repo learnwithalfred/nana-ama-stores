@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   before_save :to_lowercase
   has_many :stores
+  # has_many :store_taxes
 
   enum role: [:user, :collector, :procurement, :it, :statistics, :admin, :super_admin]
   after_initialize :set_default_role, if: :new_record?
