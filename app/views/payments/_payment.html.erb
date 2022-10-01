@@ -5,10 +5,23 @@
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Amount:</strong>
+    <strong class="block font-medium mb-1">Payment Amount:</strong>
     <%= payment.amount %>
   </p>
 
+    <p class="my-5">
+    <strong class="block font-medium mb-1">Tax Amount:</strong>
+    <%= payment.tax.amount %>
+  </p>
+      <p class="my-5">
+    <strong class="block font-medium mb-1">Tax name:</strong>
+    <%= payment.tax.name %>
+  </p>
+
+        <p class="my-5">
+    <strong class="block font-medium mb-1">Tax Description:</strong>
+    <%= payment.tax.description %>
+  </p>
   <p class="my-5">
     <strong class="block font-medium mb-1">Store:</strong>
     <%= payment.store.serial_number %>

@@ -86,3 +86,14 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
+
+<!--  Todo -->
+
+- calculate
+  - payment complete
+  - arrears
+  - balance
+- search store
+- group stores in districts and sub districts
+- pagination
+- add user id to store tax so that the one who added to amount will be known
