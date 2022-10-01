@@ -42,6 +42,25 @@ rails db:migrate
 
 `./bin/dev`
 
+## List all tables
+
+```
+<!-- show tables -->
+ActiveRecord::Base.connection.tables
+
+<!-- list table columns -->
+User.column_names
+```
+
+## Accounts
+
+- Admin Account
+  - email: admin@test.com
+  - password: password
+- Tax collector
+  - email: collector@test.com
+  - password: password
+
 👤 **Alfred Boateng**
 
 - GitHub: [@learnwithalfred](https://github.com/learnwithalfred)
