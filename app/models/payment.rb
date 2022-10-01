@@ -9,4 +9,17 @@ class Payment < ApplicationRecord
   belongs_to :user
   belongs_to :store
   belongs_to :tax
+
+  before_save do
+    self.payment_complete = self.amount >= self.tax.amount
+    # self.balance = if(self.amount >= self.tax.amount)? self.amount - self.tax.amount: 0 end
+    # self.arrears = if(self.amount < self.tax.amount)? self.tax.amount - self.amount: 0 end
+    if self.amount >= self.tax.amount
+      self.balance = self.amount - self.tax.amount
+      self.arrears = 0
+      else
+        self.arrears = self.tax.amount - self.amount
+        self.balance = 0
+    end
+  end
 end
