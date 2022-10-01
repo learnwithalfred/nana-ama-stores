@@ -1,20 +1,56 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
+<div class="flex  mt-4 justify-center px-4 sm:px-6 lg:px-8">
+  <div class="w-full lg:lg:max-w-[60%] md:max-w-[100%]">
+    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+  <span class="block">Store Details Page</span>
+</h2>
+    <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+      <div class="px-4 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900"> <%= @store.serial_number %> Details Page</h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500"> <%= @store.address %></p>
+      </div>
+      <div class="border-t border-gray-200">
+        <dl>
+          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">Store Number</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @store.serial_number %></dd>
+          </div>
+          <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">Digital Address</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @store.digital_address %></dd>
+          </div>
+          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">Registration Date</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= time_ago_in_words(@store.created_at) %> Ago
+            </dd>
+          </div>
+          <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">Purpose of structure:</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @store.purpose_of_structure %></dd>
+          </div>
+          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">Materials used for walls:</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @store.materials_used_for_walls %></dd>
+          </div>
+          <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">Address</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @store.address %></dd>
+          </div>
+          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">Is there network mast:</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @store.is_there_network_mast %></dd>
+          </div>
+          <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">About:</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><%= @store.comments %></dd>
+          </div>
+          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">Sector:</dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"> <%= @store.sector.name %>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
 
-    <%= render @store %>
-
-    <% if can? :update, @store %>
-    <%= link_to 'Edit this store', edit_store_path(@store), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <% end %>
-    <!-- <div class="inline-block ml-2">
-      <%= button_to 'Destroy this store', store_path(@store), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div> -->
-        <% if can? :read, @store %>
-
-    <%= link_to 'Back to stores', stores_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
- <% end %>
   </div>
 </div>

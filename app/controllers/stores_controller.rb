@@ -25,7 +25,7 @@ class StoresController < ApplicationController
 
   # POST /stores or /stores.json
   def create
-    @store = Store.new(store_params)
+    @store = Store.new(store_params.merge(user: current_user))
 
     respond_to do |format|
       if @store.save
@@ -72,7 +72,6 @@ class StoresController < ApplicationController
     def store_params
       params.require(:store).permit(
         :assembly_id,
-        :user_id,
         :sub_district_id,
         :community_id,
         :sector_id,
