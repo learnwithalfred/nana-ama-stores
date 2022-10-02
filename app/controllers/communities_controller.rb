@@ -12,6 +12,7 @@ class CommunitiesController < ApplicationController
 
   # GET /communities/1 or /communities/1.json
   def show
+    @stores = Store.where(community_id: params[:id])
   end
 
   # GET /communities/new
