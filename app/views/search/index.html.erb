@@ -1,23 +1,67 @@
-<h1 class="text-center"><%= pluralize(@stores.count, "Result") %></h1>
-<div class="container">
-  <table class="table table-dark table-striped">
-    <thead>
-      <tr>
-        <th><%= sort_link(@query, :serial_number, "Store Number", default_order: :asc) %></th>
-        <th><%= sort_link(@query, :digital_address, "Digital Address") %></th>
-        <th><%= sort_link(@query, :assembly, "Assembly") %></th>
-        <th><%= sort_link(@query, :user_name, "Created By") %></th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @stores.each_with_index do |store, index| %>
-        <tr>
-          <td><%= link_to store.serial_number, store %></td>
-          <td><%= link_to store.digital_address, store %></td>
-          <td><%= store.comments.truncate_words(25) %></td>
-          <td><%= link_to store.user.name, store %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="flex  justify-center px-4 sm:px-6 lg:px-8">
+  <div class="w-full lg:max-w-[90%] md:max-w-[100%] ">
+    <div class="mt-5 flex flex-col">
+      <div class="bg-gray-50">
+        <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+            <span class="block"><%= pluralize(@stores.count, "Result") %> Found </span>
+          </h2>
+        </div>
+      </div>
+      <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <div class="border-b shadow md:custom-box-shadow overflow-hidden border-gray-200">
+            <table class="divide-y min-w-full divide-gray-200">
+              <thead>
+                <tr>
+                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    <%= sort_link(@query, :serial_number, "Store Number", default_order: :asc) %></th>
+                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    <%= sort_link(@query, :digital_address, "Digital Address") %></th>
+                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    <%= sort_link(@query, :assembly, "Assembly") %></th>
+                                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    <%= sort_link(@query, :sector, "Sector") %></th>
+                     <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    <%= sort_link(@query, :sub_district, "Sub District") %></th>
+                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    <%= sort_link(@query, :user_name, "Created By") %></th>
+                                                 <th class="w-3"></th>
+
+                  </tr>
+
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white">
+                <% @stores.each_with_index do |store, index| %>
+                <tr>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= link_to store.serial_number, store %></td>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= link_to store.digital_address, store %></td>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= store.assembly.name%></td>
+                            <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= store.sector.name%></td>
+                            <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= store.sub_district.name%></td>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= store.user.name %></td>
+                                                      <td class="px-6 text-left  py-4"><%= link_to 'Show', store %></td>
+
+                </tr>
+
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
