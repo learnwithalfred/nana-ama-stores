@@ -25,7 +25,7 @@ class TaxesController < ApplicationController
 
   # POST /taxes or /taxes.json
   def create
-    @tax = Tax.new(tax_params)
+    @tax = Tax.new(tax_params.merge(user: current_user))
 
     respond_to do |format|
       if @tax.save
@@ -70,6 +70,6 @@ class TaxesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tax_params
-      params.require(:tax).permit(:user_id, :name, :description, :period, :amount)
+      params.require(:tax).permit(:name, :description, :period, :amount)
     end
 end

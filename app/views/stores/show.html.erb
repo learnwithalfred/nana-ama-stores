@@ -1,14 +1,26 @@
 <div class="flex  mt-4 justify-center px-4 sm:px-6 lg:px-8">
   <div class="w-full lg:lg:max-w-[60%] md:max-w-[100%]">
-    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
-  <span class="block">Store Details Page</span>
 
-</h2>
+      <div class="bg-gray-50">
+        <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+            <span class="block">Store Details Page</span>
+          </h2>
+          <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div class="ml-3 inline-flex rounded-md shadow">
+              <%= link_to "Add New Bill for this store", "#{@add_tax_path}", class:"inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700" %>
+              <%= link_to "Make payment for this store", "#{@pay_tax_path}", class:"inline-flex items-center justify-center px-5 py-3 border border-indigo-600 text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-700 hover:text-white mx-4" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <div class="bg-white shadow overflow-hidden sm:rounded-lg">
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900"> <%= @store.serial_number %> Details Page</h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500"> <%= @store.address %></p>
       </div>
+
       <div class="border-t border-gray-200">
         <dl>
           <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

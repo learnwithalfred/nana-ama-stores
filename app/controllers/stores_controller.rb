@@ -12,9 +12,12 @@ class StoresController < ApplicationController
 
   # GET /stores/1 or /stores/1.json
   def show
+    @add_tax_path = "/stores/#{params[:id]}/tax"
+    @pay_tax_path = "/stores/#{params[:id]}/payment"
   end
 
   def payment
+    @payment = Payment.new
   end
 
   def tax
