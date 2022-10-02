@@ -1,0 +1,25 @@
+<%= form_with(model: @store_tax, class: "contents") do |form| %>
+  <% if @store_tax.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(@store_tax.errors.count, "error") %> prohibited this store_tax from being saved:</h2>
+
+      <ul>
+        <% @store_tax.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :store_id, value:@store.id%>
+  <div class="my-5">
+    <%= form.label :tax_id %>
+            <div class="mt-1 rounded-md shadow-sm">
+      <%=form.collection_select :tax_id, Tax.order(created_at: :desc), :id, :name , class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" %>
+    </div>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

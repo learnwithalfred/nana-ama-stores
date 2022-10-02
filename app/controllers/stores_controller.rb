@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class StoresController < ApplicationController
-  before_action :set_store, only: %i[ show edit update destroy ]
+  before_action :set_store, only: %i[ show edit update destroy tax  payment]
   before_action :authenticate_user!
   load_and_authorize_resource
 
@@ -12,6 +12,13 @@ class StoresController < ApplicationController
 
   # GET /stores/1 or /stores/1.json
   def show
+  end
+
+  def payment
+  end
+
+  def tax
+    @store_tax = StoreTax.new
   end
 
   # GET /stores/new

@@ -20,5 +20,7 @@ Rails.application.routes.draw do
     path_names: { sign_in: "login", sign_out: "logout", password: "secret", confirmation: "verification" }
   resources :users
   get "/admin", to: "admin_dashboard#index"
+  get "/stores/:id/payment", to: "stores#payment"
+  get "/stores/:id/tax", to: "stores#tax"
   root "home#index"
 end
