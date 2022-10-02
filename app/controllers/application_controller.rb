@@ -2,8 +2,11 @@
 
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_query
+  def set_query
+    @query = Store.includes(:user, :assembly, :sub_district, :community, :sector).ransack(params[:q])
+  end
   rescue_from CanCan::AccessDenied do |exception|
-
   exception.default_message = "You are not authorized to purform this task"
   respond_to do |format|
     format.json { head :forbidden }

@@ -89,10 +89,6 @@ This project is [MIT](./LICENSE) licensed.
 
 <!--  Todo -->
 
-- calculate
-  - payment complete
-  - arrears
-  - balance
 - search store
 - group stores in districts and sub districts
 - pagination

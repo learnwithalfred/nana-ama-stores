@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get "search", to: "search#index"
   get "admin_dashboard/index"
   resources :store_taxes
   resources :payments

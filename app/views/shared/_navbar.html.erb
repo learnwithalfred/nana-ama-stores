@@ -82,6 +82,7 @@
       <span class="mr-6 text-sm font-medium text-gray-500 dark:text-white hover:underline">
           <%= current_user.role.capitalize() %> Account
         </span>
+                <%= render 'search/form' %>
     </div>
     <div @click.away="open = false" class="relative" x-data="{ open: false }">
       <button @click="open = !open"

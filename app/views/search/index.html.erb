@@ -1,0 +1,23 @@
+<h1 class="text-center"><%= pluralize(@stores.count, "Result") %></h1>
+<div class="container">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th><%= sort_link(@query, :serial_number, "Store Number", default_order: :asc) %></th>
+        <th><%= sort_link(@query, :digital_address, "Digital Address") %></th>
+        <th><%= sort_link(@query, :assembly, "Assembly") %></th>
+        <th><%= sort_link(@query, :user_name, "Created By") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @stores.each_with_index do |store, index| %>
+        <tr>
+          <td><%= link_to store.serial_number, store %></td>
+          <td><%= link_to store.digital_address, store %></td>
+          <td><%= store.comments.truncate_words(25) %></td>
+          <td><%= link_to store.user.name, store %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
