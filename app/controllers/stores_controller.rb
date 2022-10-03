@@ -24,6 +24,8 @@ class StoresController < ApplicationController
 
   def payment_list
     @payments = Payment.where(store_id: params[:id])
+    @total_payment = Payment.where(store_id: params[:id]).sum(:amount)
+    @total_tax = StoreTax.where(store_id: params[:id]).map { |store| store.tax.amount }.sum
   end
 
   def tax
