@@ -1,0 +1,48 @@
+<div class="mt-5 flex flex-col">
+
+    <div class="bg-gray-50">
+      <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+          <span class="block">Users List</span>
+        </h2>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+          <div class="ml-3 inline-flex rounded-md shadow">
+            <%= link_to "Add user", new_user_path, class:"inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+        <div class="border-b shadow md:custom-box-shadow overflow-hidden border-gray-200">
+          <table class="divide-y min-w-full divide-gray-200">
+            <thead>
+              <tr>
+                <th class="w-1">#</th>
+                <th class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">Name</th>
+                <th class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">Email</th>
+                <th class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">Gender</th>
+                <th class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">Address</th>
+                <th class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">Role</th>
+                <th class="w-8"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white">
+                <% @users.each_with_index do |user, index| %>
+                <tr>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= index + 1 %></td>
+                  <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.name %></td>
+                  <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.email %></td>
+                  <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.gender %></td>
+                  <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.address %></td>
+                  <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.role %></td>
+                  <td class="px-6 text-left py-4"><%= link_to 'Edit_Role', edit_user_path(user) %></td>
+                    </tr>
+                  <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

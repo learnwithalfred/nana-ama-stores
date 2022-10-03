@@ -73,7 +73,9 @@
         <li> <%= link_to "Sub Districts", sub_districts_path,  class:"text-gray-900 dark:text-white hover:underline" %>
         </li>
         <li> <%= link_to "Payments", payments_path,  class:"text-gray-900 dark:text-white hover:underline" %></li>
-        <!-- <li> <%= link_to "Taxes for stores", store_taxes_path,  class:"text-gray-900 dark:text-white hover:underline" %></li> -->
+        <% if can? :manage, :all %>
+        <li> <%= link_to "Manage Users", users_index_path,  class:"text-gray-900 dark:text-white hover:underline" %></li>
+        <% end %>
       </ul>
     </div>
   </div>

@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
   def set_query
     @query = Store.includes(:user, :assembly, :sub_district, :community, :sector).ransack(params[:q])
   end
+
+  def is_admin
+    unless current_user.admin? || current_user.super_admin? || current_user.it?
+      flash[:danger] = "You do not have permission to perform this task"
+      redirect_to root_path
+    end
+  end
   rescue_from CanCan::AccessDenied do |exception|
   exception.default_message = "You are not authorized to purform this task"
   respond_to do |format|

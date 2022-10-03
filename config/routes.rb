@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get "users/index"
+  get "users/edit"
+  get "users/custom_create_user"
   get "search", to: "search#index"
   get "admin_dashboard/index"
   resources :store_taxes
