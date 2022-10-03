@@ -12,8 +12,6 @@ class Payment < ApplicationRecord
 
   before_save do
     self.payment_complete = self.amount >= self.tax.amount
-    # self.balance = if(self.amount >= self.tax.amount)? self.amount - self.tax.amount: 0 end
-    # self.arrears = if(self.amount < self.tax.amount)? self.tax.amount - self.amount: 0 end
     if self.amount >= self.tax.amount
       self.balance = self.amount - self.tax.amount
       self.arrears = 0
