@@ -89,4 +89,25 @@ This project is [MIT](./LICENSE) licensed.
 
 <!--  Todo -->
 
-- pagination
+- users controller
+  - update users
+  - list all users
+  - create user
+  - all collectors
+  - all procurements
+  - al admins
+- List user activity
+  - collector stores
+  - payments
+  - totals
+  - date and times
+- statistics path
+- calculate expected payment amount from all stores in a district for a year
+- calculate all payments made for a year
+- calculate all payments arrears
+- List all stores where there are no
+  - payments
+  - tax
+  - part payments
+  - total payments
+-
