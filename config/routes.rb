@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   get "/admin", to: "admin_dashboard#index"
   get "/stores/:id/payment", to: "stores#payment"
   get "/stores/:id/tax", to: "stores#tax"
+  get "/stores/:id/payments-list", to: "stores#payment_list"
+  get "/stores/:id/taxes-list", to: "stores#taxes_list"
   root "home#index"
 end

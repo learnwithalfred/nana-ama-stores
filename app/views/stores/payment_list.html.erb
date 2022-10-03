@@ -1,22 +1,13 @@
 <div class="flex  justify-center px-4 sm:px-6 lg:px-8">
   <div class="w-full lg:max-w-[90%] md:max-w-[100%] ">
-
-
     <div class="mt-5 flex flex-col">
-
       <div class="bg-gray-50">
         <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
-            <span class="block">Payment List</span>
+            <span class="block">Payment List from store <%=@store.serial_number %></span>
           </h2>
-          <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-            <div class="ml-3 inline-flex rounded-md shadow">
-              <%= link_to "Add payment", new_payment_path, class:"inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700" %>
-            </div>
-          </div>
         </div>
       </div>
-
       <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
           <div class="border-b shadow md:custom-box-shadow overflow-hidden border-gray-200">
@@ -27,14 +18,6 @@
                   <th
                     class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
                     Tax Name
-                  </th>
-                  <th
-                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
-                    Digital Address
-                  </th>
-                  <th
-                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
-                    Store Number
                   </th>
                   <th
                     class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
@@ -60,12 +43,6 @@
                   <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
                     <%= payment.tax.name %>
 
-                  </td>
-                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
-                    <%= payment.store.digital_address %>
-                  </td>
-                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
-                    <%= payment.store.serial_number %>
                   </td>
                   <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
                     <%= payment.payee %>

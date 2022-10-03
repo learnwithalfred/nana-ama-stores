@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class StoresController < ApplicationController
-  before_action :set_store, only: %i[ show edit update destroy tax  payment]
+  before_action :set_store, only: %i[ show edit update destroy tax  payment payment_list taxes_list]
   before_action :authenticate_user!
   load_and_authorize_resource
 
@@ -14,14 +14,24 @@ class StoresController < ApplicationController
   def show
     @add_tax_path = "/stores/#{params[:id]}/tax"
     @pay_tax_path = "/stores/#{params[:id]}/payment"
+    @store_payments_path = "/stores/#{params[:id]}/payments-list"
+    @store_taxes_path = "/stores/#{params[:id]}/taxes-list"
   end
 
   def payment
     @payment = Payment.new
   end
 
+  def payment_list
+    @payments = Payment.where(store_id: params[:id])
+  end
+
   def tax
     @store_tax = StoreTax.new
+  end
+
+  def taxes_list
+    @store_taxes = StoreTax.where(store_id: params[:id])
   end
 
   # GET /stores/new
