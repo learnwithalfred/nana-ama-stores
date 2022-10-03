@@ -76,3 +76,5 @@ end
 gem "cancancan"
 gem "devise"
 gem "ransack"
+
+gem "will_paginate", "~> 3.3"
