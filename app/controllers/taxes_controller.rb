@@ -70,6 +70,6 @@ class TaxesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tax_params
-      params.require(:tax).permit(:name, :description, :amount, :year)
+      params.require(:tax).permit(:name, :description, :amount, :year, :store_id)
     end
 end

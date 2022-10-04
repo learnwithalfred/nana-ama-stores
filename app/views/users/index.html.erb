@@ -36,7 +36,7 @@
                   <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.email %></td>
                   <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.gender %></td>
                   <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.address %></td>
-                  <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.role %></td>
+                  <td  class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.role.upcase() %></td>
                   <td class="px-6 text-left py-4"><%= link_to 'Edit_Role', edit_user_path(user) %></td>
                     </tr>
                   <% end %>

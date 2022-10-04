@@ -25,7 +25,9 @@ class StoresController < ApplicationController
   def payment_list
     @payments = Payment.where(store_id: params[:id])
     @total_payment = Payment.where(store_id: params[:id]).sum(:amount)
-    @total_tax = StoreTax.where(store_id: params[:id]).map { |store| store.tax.amount }.sum
+    @total_tax = Tax.where(store_id: params[:id]).sum(:amount)
+
+    # @total_tax = StoreTax.where(store_id: params[:id]).map { |store| store.tax.amount }.sum
     if @total_tax > @total_payment
       @arrears = @total_tax - @total_payment
       @balance = 0
@@ -38,12 +40,12 @@ class StoresController < ApplicationController
   end
 
   def tax
-    @store_tax = StoreTax.new
+    @tax = Tax.new
   end
 
   def taxes_list
-    @store_taxes = StoreTax.where(store_id: params[:id])
-    @total_tax = StoreTax.where(store_id: params[:id]).map { |store| store.tax.amount }.sum
+    @store_taxes = Tax.where(store_id: params[:id])
+    @total_tax = Tax.where(store_id: params[:id]).sum(:amount)
   end
 
   # GET /stores/new

@@ -7,8 +7,9 @@ class Tax < ApplicationRecord
   validates :description, presence: true, length: { minimum: MIN_LENGTH }
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 10000 }
   validates :year, presence: true, numericality: { greater_than: 2020, less_than: 2050 }
-
+  validates :store_id, presence: true
   belongs_to :user
   has_many :store_taxes, dependent: :destroy
   has_many :stores, through: :store_taxes
+  belongs_to :store
 end

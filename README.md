@@ -117,3 +117,10 @@ store id = 1
                     tax_id = 1
     store_tax = 1
 rails generate migration add_year_to_tax year:integer
+
+
+payment
+should have tax id where tax.store-id is equal to the store
+then tax should have store id
+then to calculate get all taxes where store id is the same
+get all t

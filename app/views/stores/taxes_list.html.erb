@@ -7,13 +7,13 @@
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
             <span class="block"><%=@store.serial_number %> Taxes List</span>
           </h2>
-           <div>
+          <div>
 
-  <p>
-    Total Tax
-    <span class="text-gray-900"><%= @total_tax %></span>
-  </p>
-</div>
+            <p>
+              Total Tax
+              <span class="text-gray-900"><%= @total_tax %></span>
+            </p>
+          </div>
         </div>
 
       </div>
@@ -57,14 +57,11 @@
                   <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
                     <%= store_tax.store.serial_number %></td>
                   <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
-                    <%= store_tax.tax.name %>
+                    <%= store_tax.name %>
                   </td>
                   <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
-                    <%= store_tax.tax.amount %>
+                    <%= store_tax.amount %>
                   </td>
-                  <!-- <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
-                    <%= store_tax.tax.period %>
-                  </td> -->
                   <td class="px-6 text-left py-4"><%= link_to 'More', store_tax %></td>
 
                   <% if can? :update, @store_taxes %>
