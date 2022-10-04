@@ -3,27 +3,24 @@
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
-
   <p class="my-5">
     <%= @community.name %>
   </p>
-
-
     <%= link_to 'Edit this community', edit_community_path(@community), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
 
-
 <div class="flex  justify-center px-4 sm:px-6 lg:px-8">
   <div class="w-full lg:max-w-[90%] md:max-w-[100%] ">
-
-
     <div class="mt-5 flex flex-col">
-
       <div class="bg-gray-50">
         <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
-            <span class="block"><%= @stores[1].sub_district.name %> <%= @community.name %> Stores List</span>
+            <span class="block">
+              <% if @stores.length > 0 %>
+              <%= @stores[1].sub_district.name %> <%= @community.name %>
+              <% end %>
+              Stores List</span>
           </h2>
         </div>
       </div>
@@ -74,7 +71,6 @@
                   </td>
                   <td class="px-6 text-left  py-4"><%= link_to 'Show', store %></td>
                   <td class="px-6 text-left py-4"><%= link_to 'Edit', edit_store_path(store) %></td>
-
                   <% end %>
               </tbody>
             </table>

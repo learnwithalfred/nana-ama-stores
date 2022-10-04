@@ -7,8 +7,8 @@ class PaymentsController < ApplicationController
 
   # GET /payments or /payments.json
   def index
-    @payments = Payment.all
-    @total_payment = Payment.sum(:amount)
+    @payments = Payment.paginate(page: params[:page], per_page: 10)
+    @total_payment = Payment.all.sum(:amount)
     @total_tax = Tax.sum(:amount)
     if @total_tax >= @total_payment
       @total_arrears = @total_tax - @total_payment

@@ -28,6 +28,7 @@ Verify ruby and rails installation
 ## Clone repository and start application
 
 ```
+
 git clone https://github.com/learnwithalfred/furry-invention.git
 cd furry-invention
 bundle install
@@ -86,5 +87,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
-<!-- seed data, do the entity relationhip diagram  -->

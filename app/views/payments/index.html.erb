@@ -1,28 +1,25 @@
 <div class="flex  justify-center px-4 sm:px-6 lg:px-8">
   <div class="w-full lg:max-w-[90%] md:max-w-[100%] ">
-
-
     <div class="mt-5 flex flex-col">
-
       <div class="bg-gray-50">
         <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
             <span class="block">Payment List</span>
           </h2>
-        <div>
-           <p>
-            Total Tax: <%= @total_tax %>
-          </p>
-           <p>
-            Total Payment: <%= @total_payment %>
-          </p>
-                     <p>
-            Total Arrears: <%= @total_arrears %>
-          </p>
-                               <p>
-            Total Balance: <%= @total_balance %>
-          </p>
-        </div>
+          <div>
+            <p>
+              Total Tax: <%= @total_tax %>
+            </p>
+            <p>
+              Total Payment: <%= @total_payment %>
+            </p>
+            <p>
+              Total Arrears: <%= @total_arrears %>
+            </p>
+            <p>
+              Total Balance: <%= @total_balance %>
+            </p>
+          </div>
         </div>
 
 
@@ -95,6 +92,18 @@
             </table>
           </div>
         </div>
+        <div class="text-center my-4">
+          <div role="navigation" aria-label="Pagination"
+            class="px-3 py-2 mx-2 text-gray-700 no-underline bg-white rounded-lg">
+            <div class="flickr_pagination">
+              <div class="">
+                <%= page_entries_info @payments %>
+              </div>
+              <%= will_paginate @payments %>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

@@ -1,10 +1,6 @@
-
 <div class="flex  justify-center px-4 sm:px-6 lg:px-8">
   <div class="w-full lg:max-w-[90%] md:max-w-[100%] ">
-
-
     <div class="mt-5 flex flex-col">
-
       <div class="bg-gray-50">
         <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
@@ -15,7 +11,6 @@
           </p>
         </div>
       </div>
-
       <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
           <div class="border-b shadow md:custom-box-shadow overflow-hidden border-gray-200">
@@ -61,12 +56,22 @@
                   <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
                     <%= tax.amount %>
                   </td>
-
                   <td class="px-6 text-left  py-4"><%= link_to 'Show', tax %></td>
                   <td class="px-6 text-left py-4"><%= link_to 'Edit', edit_tax_path(tax) %></td>
                   <% end %>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div class="text-center my-4">
+          <div role="navigation" aria-label="Pagination"
+            class="px-3 py-2 mx-2 text-gray-700 no-underline bg-white rounded-lg">
+            <div class="flickr_pagination">
+              <div class="">
+                <%= page_entries_info @taxes %>
+              </div>
+              <%= will_paginate @taxes %>
+            </div>
           </div>
         </div>
       </div>
