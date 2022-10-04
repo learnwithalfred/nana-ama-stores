@@ -8,6 +8,15 @@ class PaymentsController < ApplicationController
   # GET /payments or /payments.json
   def index
     @payments = Payment.all
+    @total_payment = Payment.sum(:amount)
+    @total_tax = Tax.sum(:amount)
+    if @total_tax >= @total_payment
+      @total_arrears = @total_tax - @total_payment
+      @total_balance = 0
+    else
+      @total_balance = @total_payment - @total_tax
+      @total_arrears = 0
+    end
   end
 
   # GET /payments/1 or /payments/1.json
