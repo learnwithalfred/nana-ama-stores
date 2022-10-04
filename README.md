@@ -86,41 +86,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
-<!--  Todo -->
-
-- users controller
-  - update users
-  - list all users
-  - create user
-  - all collectors
-  - all procurements
-  - al admins
-- List user activity
-  - collector stores
-  - payments
-  - totals
-  - date and times
-- statistics path
-- calculate expected payment amount from all stores in a district for a year
-- calculate all payments made for a year
-- calculate all payments arrears
-- List all stores where there are no
-  - payments
-  - tax
-  - part payments
-  - total payments
--
-  select all stores where store_id not in (select store_id from users_stores where user_id = 1)
-
-store id = 1
-                    tax_id = 1
-    store_tax = 1
-rails generate migration add_year_to_tax year:integer
-
-
-payment
-should have tax id where tax.store-id is equal to the store
-then tax should have store id
-then to calculate get all taxes where store id is the same
-get all t
+<!-- seed data, do the entity relationhip diagram  -->

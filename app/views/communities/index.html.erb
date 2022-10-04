@@ -1,14 +1,51 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Communities</h1>
-    <%= link_to 'New community', new_community_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
+<div class="flex  justify-center px-4 sm:px-6 lg:px-8">
+  <div class="w-full lg:max-w-[50%] md:max-w-[100%] ">
 
-  <div id="communities" class="min-w-full">
-    <%= render @communities %>
+
+    <div class="mt-5 flex flex-col">
+
+      <div class="bg-gray-50">
+        <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+            <span class="block">Communities List</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <div class="border-b shadow md:custom-box-shadow overflow-hidden border-gray-200">
+            <table class="divide-y min-w-full divide-gray-200">
+              <thead>
+                <tr>
+                  <th class="w-1">#</th>
+                  <th
+                    class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
+                    Name
+                  </th>
+                  <th class="w-3"></th>
+                  <th class="w-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white">
+                <% @communities.each_with_index do |community, index| %>
+                <tr>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= index + 1 %></td>
+                  <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
+                    <%= community.name %>
+
+                  </td>
+                  <td class="px-6 text-left  py-4"><%= link_to 'Show', community %></td>
+                  <td class="px-6 text-left py-4"><%= link_to 'Edit', edit_community_path(community) %></td>
+
+                  <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
