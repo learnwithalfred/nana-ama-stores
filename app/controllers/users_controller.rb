@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # todo admins should create users
   def custom_create_user
     if current_user.admin?
       User.create(:email => params[:email], password => params[:password])
@@ -39,5 +40,5 @@ class UsersController < ApplicationController
 
     def user_role_params
       params.require(:user).permit(:role, :name)
-      end
+    end
 end

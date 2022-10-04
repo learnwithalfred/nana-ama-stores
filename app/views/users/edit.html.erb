@@ -3,8 +3,6 @@
     <h2 class="mb-6 text-center text-3xl font-extrabold leading-9 text-gray-700">
       Edit <%=@user.name%> Role
     </h2>
-
-
     <%= form_with(model: @user) do |form| %>
     <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -34,8 +32,6 @@
           </div>
 
         </div>
-
-
         <div class="mt-6">
           <%= form.submit "Update Role Now", class:"transition border bg-blue-500
       hover:bg-blue-700 focus:outline-none group relative flex w-full

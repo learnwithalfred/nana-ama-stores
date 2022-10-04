@@ -111,3 +111,9 @@ This project is [MIT](./LICENSE) licensed.
   - part payments
   - total payments
 -
+  select all stores where store_id not in (select store_id from users_stores where user_id = 1)
+
+store id = 1
+                    tax_id = 1
+    store_tax = 1
+rails generate migration add_year_to_tax year:integer
