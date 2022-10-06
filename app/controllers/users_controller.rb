@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_action :is_admin
 
   def index
-    @users = User.all.where.not(id: current_user.id).paginate(page: params[:page], per_page: 10)
+    @users = User.all.where.not(id: current_user.id).paginate(page: params[:page], per_page: 10).order(id: :asc)
   end
 
   def edit
