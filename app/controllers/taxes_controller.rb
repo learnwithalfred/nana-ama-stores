@@ -7,7 +7,7 @@ class TaxesController < ApplicationController
 
   # GET /taxes or /taxes.json
   def index
-    @taxes = Tax.paginate(page: params[:page], per_page: 10)
+    @taxes = Tax.paginate(page: params[:page], per_page: 8)
     @total_tax = Tax.all.sum(:amount)
   end
 

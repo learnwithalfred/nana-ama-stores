@@ -1,10 +1,12 @@
-# Offinso District Stores data collection app
+# District Stores data collection app
 
-> We created a to collect stores data and revenue
+![Nana Ama](app/assets/images/nana_ama.png)
+
+> We created an application to collect stores data and revenue. User has different permissions and is able to perform different task based on their permissions
 
 ## Built With
 
-- Javascript
+- Tailwind CSS
 - Ruby
 - Ruby on Rails
 
@@ -13,19 +15,29 @@
 - Node.js version 16.4.2
 - Ruby version 3.1.2
 - Rails version 7.0.3
-- Make sure you are using the latest version of ruby `rvm use 3.1.2`
+
+
+## Live link
+
+`https://nana-ama.herokuapp.com/`
+
+
+## Login Credentials
+
+- Admin Account
+  - Email: `admin_001@test.com`
+  - Password: `password`
+- Other Accounts - User, Collector, IT, etc.
+  - Email can be found at `https://nana-ama.herokuapp.com/users/index`
+  - Password for all seeded acconts: `password`
+
+## Preview Video
+
+`https://youtu.be/BmYaJRVheeM`
 
 ## Getting Started 🙌
 
-To get a local copy up and running follow these simple example steps.
-Verify ruby and rails installation
-
-```
-  ruby -v
-  rails -v
-```
-
-## Clone repository and start application
+To get a local copy, run follow make sure you have installed the prerequisite and paste the following in you terminal
 
 ```
 
@@ -35,6 +47,7 @@ bundle install
 yarn install
 rails db:create
 rails db:migrate
+rails db:seed
 ./bin/dev
 
 ```
@@ -43,15 +56,6 @@ rails db:migrate
 
 `./bin/dev`
 
-## List all tables
-
-```
-<!-- show tables -->
-ActiveRecord::Base.connection.tables
-
-<!-- list table columns -->
-User.column_names
-```
 
 ## Accounts
 
