@@ -58,7 +58,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 
   # linters
-  gem "faker"
+
   gem "rubocop"
   gem "rubocop-rails"
 
@@ -79,4 +79,5 @@ gem "cancancan"
 gem "devise"
 gem "ransack"
 
+gem "faker"
 gem "will_paginate", "~> 3.3"
