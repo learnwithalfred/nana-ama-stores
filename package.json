@@ -5,8 +5,13 @@
   "engines": {
     "node": "16.x"
   },
+  "private": true,
+  "dependencies": {
+    "tailwindcss": "1.9.6"
+  },
   "devDependencies": {
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^13.0.3",
+    "husky": "^8.0.0"
   },
   "lint-staged": {
     "./**/*.rb": [
@@ -17,8 +22,6 @@
     ]
   },
   "scripts": {
-    "prepare": "husky install",
-    "precommit": "bundle exec rubocop -a",
-    "prepush": "bundle exec rubocop -a"
+    "precommit": "bundle exec rubocop -a"
   }
 }
