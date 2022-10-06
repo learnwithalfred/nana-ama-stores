@@ -11,9 +11,9 @@
 ### Prerequisites
 
 - Node.js version 16.4.2
-- Ruby version 3.0.2
+- Ruby version 3.1.2
 - Rails version 7.0.3
-- Make sure you are using the latest version of ruby `rvm use 3.0.2`
+- Make sure you are using the latest version of ruby `rvm use 3.1.2`
 
 ## Getting Started 🙌
 
