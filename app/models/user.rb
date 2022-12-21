@@ -11,11 +11,13 @@ class User < ApplicationRecord
     uniqueness: { case_sensitive: false },
     length: { maximum: MAX_EMAIL_LENGTH },
     format: { with: VALID_EMAIL_REGEX }
-  # validates :password, length: { in: PASSWORD_LENGTH }
 
   before_save :to_lowercase
-  has_many :stores
-  # has_many :store_taxes
+  has_many :stores, dependent: :destroy
+  has_many :payments, dependent: :destroy
+  has_many :taxes, dependent: :destroy
+
+
 
   enum role: [:user, :collector, :procurement, :it, :statistics, :admin, :super_admin]
   after_initialize :set_default_role, if: :new_record?
