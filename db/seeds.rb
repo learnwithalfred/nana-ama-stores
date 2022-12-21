@@ -32,7 +32,7 @@ end
   )
 end
 
-admin_num = 1
+admin_num = 0
 5.times do
   admin_num = admin_num + 1
   User.create!(
@@ -48,13 +48,13 @@ admin_num = 1
   )
 end
 
-10.times do
+5.times do
   User.create!(
     [{
       name: Faker::Name.name,
       email: Faker::Internet.email,
-      password: "password",
-      password_confirmation: "password",
+      password: "secrete",
+      password_confirmation: "secrete",
       gender: Faker::Gender.binary_type,
       address: Faker::Address.community,
       role: Faker::Number.between(from: 1, to: 6),
@@ -63,7 +63,7 @@ end
 end
 
 class_num = 100
-50.times do
+30.times do
   class_num = class_num + 1
   Store.create!(
     [{
@@ -84,7 +84,7 @@ class_num = 100
   )
 end
 
-100.times do
+10.times do
   Tax.create!(
     [{
       user_id: User.where(role: "collector").sample.id,
@@ -97,7 +97,7 @@ end
   )
 end
 
-400.times do
+100.times do
   Payment.create!(
     [{
       user_id: User.where(role: "collector").sample.id,
