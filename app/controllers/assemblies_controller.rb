@@ -2,8 +2,8 @@
 
 class AssembliesController < ApplicationController
   before_action :set_assembly, only: %i[ show edit update destroy ]
-  load_and_authorize_resource
-  before_action :authenticate_user!
+  # load_and_authorize_resource
+  before_action :authenticate_author!
 
   # GET /assemblies or /assemblies.json
   def index

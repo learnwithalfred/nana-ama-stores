@@ -5,13 +5,13 @@
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Nana Ama App</span>
     </a>
 
-    <% if current_user %>
+    <% if current_author %>
 
     <div class="flex items-center">
 
       <!-- <a href="tel:5541251234" class="mr-6 text-sm font-medium text-gray-500 dark:text-white hover:underline">(555) 412-1234</a> -->
       <span class="mr-6 text-sm font-medium text-gray-500 dark:text-white hover:underline">
-        <%= current_user.role.capitalize() %> Account
+        <%= current_author.role.capitalize() %> Account
       </span>
       <%= render 'search/form' %>
     </div>
@@ -19,7 +19,7 @@
       <button @click="open = !open"
         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
         <span>
-          Welcome <%= current_user.name %>
+          Welcome <%= current_author.name %>
         </span>
       </button>
       <div x-show="open" x-transition:enter="transition ease-out duration-100"
@@ -28,8 +28,8 @@
         x-transition:leave-end="transform opacity-0 scale-95"
         class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
         <div class="px-2 py-2 dark:text-white dark:bg-gray-900 rounded-md shadow dark-mode:bg-gray-800">
-          <%=link_to "Profile", edit_user_registration_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
-          <%=button_to "Logout", destroy_user_session_path, method: :delete, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
+          <%=link_to "Profile", edit_author_registration_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
+          <%=button_to "Logout", destroy_author_session_path, method: :delete, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
         </div>
       </div>
     </div>
@@ -53,15 +53,15 @@
         x-transition:leave-end="transform opacity-0 scale-95"
         class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
         <div class="px-2 py-2 dark:text-white dark:bg-gray-900 rounded-md shadow dark-mode:bg-gray-800">
-          <%= link_to "Sign Up", new_user_registration_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
-          <%= link_to "Login", new_user_session_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
+          <%= link_to "Sign Up", new_author_registration_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
+          <%= link_to "Login", new_author_session_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
         </div>
       </div>
     </div>
     <% end %>
   </div>
 </nav>
-<% if current_user && current_user.role != "user" %>
+<% if current_author && current_author.role != "user" %>
 
 <nav class="bg-gray-50 dark:bg-gray-700">
   <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
@@ -73,8 +73,9 @@
         <!-- <li> <%= link_to "Sub Districts", sub_districts_path,  class:"text-gray-900 dark:text-white hover:underline" %> -->
         </li>
         <li> <%= link_to "Payments", payments_path,  class:"text-gray-900 dark:text-white hover:underline" %></li>
-        <% if can? :manage, :all %>
-        <li> <%= link_to "Manage Users", users_index_path,  class:"text-gray-900 dark:text-white hover:underline" %></li>
+        <% if current_author && current_author.role == "admin" %>
+
+        <li> <%= link_to "Manage Users", authors_index_path,  class:"text-gray-900 dark:text-white hover:underline" %></li>
         <% end %>
       </ul>
     </div>

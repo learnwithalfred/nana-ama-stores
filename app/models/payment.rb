@@ -6,7 +6,7 @@ class Payment < ApplicationRecord
   MAX_LENGTH = 255
   validates :payee, presence: true, length: { minimum: MIN_LENGTH, maximum: MAX_LENGTH }
 
-  belongs_to :user
+  belongs_to :author
   belongs_to :store
   belongs_to :tax
 

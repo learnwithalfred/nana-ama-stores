@@ -3,7 +3,7 @@ en:
   unauthorized:
     manage:
       all: "Not authorized to %{action} %{subject}."
-      user: "Not allowed to manage other user accounts."
+      author: "Not allowed to manage other author accounts."
     update:
       store: "Not allowed to update this store."
       tax: "Not allowed to update this tax."

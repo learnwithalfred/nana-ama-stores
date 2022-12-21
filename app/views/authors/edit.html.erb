@@ -1,15 +1,15 @@
 <div class="flex  mt-4 justify-center px-4 py-4 sm:px-6 lg:px-8">
   <div class="w-full max-w-md">
     <h2 class="mb-6 text-center text-3xl font-extrabold leading-9 text-gray-700">
-      Edit <%=@user.name%> Role
+      Edit <%=@author.name%> Role
     </h2>
-    <%= form_with(model: @user) do |form| %>
-    <% if @user.errors.any? %>
+    <%= form_with(model: @author) do |form| %>
+    <% if @author.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
 
       <ul>
-        <% @user.errors.each do |error| %>
+        <% @author.errors.each do |error| %>
         <li><%= error.full_message %></li>
         <% end %>
       </ul>

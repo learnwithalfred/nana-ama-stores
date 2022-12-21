@@ -34,21 +34,21 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200 bg-white">
-            <% @users.each_with_index do |user, index| %>
+            <% @authors.each_with_index do |author, index| %>
             <tr>
               <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= index + 1 %>
               </td>
-              <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.name %>
+              <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= author.name %>
               </td>
-              <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.email %>
+              <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= author.email %>
               </td>
-              <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= user.gender %>
+              <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600"><%= author.gender %>
               </td>
               <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
-                <%= user.address %></td>
+                <%= author.address %></td>
               <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
-                <%= user.role.upcase() %></td>
-              <td class="px-6 text-left py-4"><%= link_to 'Edit_Role', edit_user_path(user) %></td>
+                <%= author.role.upcase() %></td>
+              <td class="px-6 text-left py-4"><%= link_to 'Edit_Role', edit_author_path(author) %></td>
             </tr>
             <% end %>
           </tbody>
@@ -60,9 +60,9 @@
         class="px-3 py-2 mx-2 text-gray-700 no-underline bg-white rounded-lg">
         <div class="flickr_pagination">
           <div class="">
-            <%= page_entries_info @users %>
+            <%= page_entries_info @authors %>
           </div>
-          <%= will_paginate @users %>
+          <%= will_paginate @authors %>
         </div>
       </div>
     </div>

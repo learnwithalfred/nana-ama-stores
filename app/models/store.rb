@@ -13,7 +13,7 @@ class Store < ApplicationRecord
   validates :is_there_network_mast, presence: true, length: { minimum: MIN_LENGTH, maximum: MAX_LENGTH }
 
   belongs_to :assembly
-  belongs_to :user
+  belongs_to :author
   belongs_to :sub_district
   belongs_to :community
   belongs_to :sector

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User < ApplicationRecord
+class Author < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[^@\s]+@[^@\s]+\z/
   MAX_EMAIL_LENGTH = 50
   PASSWORD_LENGTH = 6..50

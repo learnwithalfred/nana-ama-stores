@@ -41,12 +41,8 @@
 
                   <th class="w-3"></th>
 
-                  <% if can? :update, @store_taxes %>
                   <th class="w-3"></th>
-                  <% end %>
-                  <% if can? :destroy, @store_taxes %>
-                  <th class="w-3"></th>
-                  <% end %>
+                    <th class="w-3"></th>
 
                 </tr>
               </thead>
@@ -68,14 +64,10 @@
                   </td> -->
                   <td class="px-6 text-left py-4"><%= link_to 'More', store_tax %></td>
 
-                  <% if can? :update, @store_taxes %>
                   <td class="px-6 text-left py-4"><%= link_to 'Edit', edit_store_tax_path(store_tax) %></td>
-                  <% end %>
-                  <% if can? :destroy, @store_taxes %>
                   <td class="px-6 text-left py-4">
                     <%= link_to 'Destroy', store_tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
-                <% end %>
                 <% end %>
               </tbody>
             </table>

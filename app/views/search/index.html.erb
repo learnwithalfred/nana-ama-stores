@@ -31,7 +31,7 @@
                     <%= sort_link(@query, :sub_district, "Sub District") %></th>
                   <th
                     class="bg-gray-50 px-6 py-3 text-left text-lg font-bold leading-4 tracking-wider text-bb-gray-600 text-opacity-50">
-                    <%= sort_link(@query, :user_name, "Created By") %></th>
+                    <%= sort_link(@query, :author_name, "Created By") %></th>
                   <th class="w-3"></th>
                 </tr>
               </thead>
@@ -49,7 +49,7 @@
                   <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
                     <%= store.sub_district.name%></td>
                   <td class="whitespace-no-wrap px-6 py-4 text-lg font-medium leading-5 text-bb-gray-600">
-                    <%= store.user.name %></td>
+                    <%= store.author.name %></td>
                   <td class="px-6 text-left  py-4"><%= link_to 'Show', store %></td>
                 </tr>
                 <% end %>

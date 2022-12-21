@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get "users/index"
-  get "users/edit"
-  get "users/custom_create_user"
+  get "authors/index"
+  get "authors/edit"
+  get "authors/custom_create_author"
   get "search", to: "search#index"
   get "admin_dashboard/index"
   resources :store_taxes
@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   get "/404", to: "errors#not_found", via: :all
   get "/422", to: "errors#unprocessable"
   get "/500", to: "errors#internal_server_error", via: :all
-  devise_for :users, path: "auth",
+  devise_for :authors, path: "auth",
     path_names: { sign_in: "login", sign_out: "logout", password: "secret", confirmation: "verification" }
-  resources :users
+  resources :authors
   get "/admin", to: "admin_dashboard#index"
   get "/stores/:id/payment", to: "stores#payment"
   get "/stores/:id/tax", to: "stores#tax"

@@ -2,8 +2,8 @@
 
 class StoresController < ApplicationController
   before_action :set_store, only: %i[ show edit update destroy tax  payment payment_list taxes_list]
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  before_action :authenticate_author!
+  # load_and_authorize_resource
 
   # GET /stores or /stores.json
   def index
@@ -59,7 +59,7 @@ class StoresController < ApplicationController
 
   # POST /stores or /stores.json
   def create
-    @store = Store.new(store_params.merge(user: current_user))
+    @store = Store.new(store_params.merge(author: current_author))
 
     respond_to do |format|
       if @store.save

@@ -2,8 +2,8 @@
 
 class SectorsController < ApplicationController
   before_action :set_sector, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  before_action :authenticate_author!
+  # load_and_authorize_resource
 
   # GET /sectors or /sectors.json
   def index

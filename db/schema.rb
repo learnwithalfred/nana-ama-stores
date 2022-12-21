@@ -20,6 +20,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "authors", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name", null: false
+    t.string "gender"
+    t.string "address"
+    t.integer "role", default: 0, null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_authors_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true
+  end
+
   create_table "communities", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -27,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "author_id", null: false
     t.decimal "amount", null: false
     t.bigint "store_id", null: false
     t.string "payee", null: false
@@ -37,9 +53,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
     t.bigint "tax_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_payments_on_author_id"
     t.index ["store_id"], name: "index_payments_on_store_id"
     t.index ["tax_id"], name: "index_payments_on_tax_id"
-    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "sectors", force: :cascade do |t|
@@ -59,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
 
   create_table "stores", force: :cascade do |t|
     t.bigint "assembly_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "author_id", null: false
     t.bigint "sub_district_id", null: false
     t.bigint "community_id", null: false
     t.bigint "sector_id", null: false
@@ -74,10 +90,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["assembly_id"], name: "index_stores_on_assembly_id"
+    t.index ["author_id"], name: "index_stores_on_author_id"
     t.index ["community_id"], name: "index_stores_on_community_id"
     t.index ["sector_id"], name: "index_stores_on_sector_id"
     t.index ["sub_district_id"], name: "index_stores_on_sub_district_id"
-    t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
   create_table "sub_districts", force: :cascade do |t|
@@ -87,7 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
   end
 
   create_table "taxes", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "author_id", null: false
     t.string "name", null: false
     t.string "description", null: false
     t.string "period"
@@ -96,34 +112,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
     t.datetime "updated_at", null: false
     t.integer "year", default: 2022
     t.integer "store_id", default: 1
-    t.index ["user_id"], name: "index_taxes_on_user_id"
+    t.index ["author_id"], name: "index_taxes_on_author_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "name", null: false
-    t.string "gender"
-    t.string "address"
-    t.integer "role", default: 0, null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
+  add_foreign_key "payments", "authors"
   add_foreign_key "payments", "stores"
   add_foreign_key "payments", "taxes"
-  add_foreign_key "payments", "users"
   add_foreign_key "store_taxes", "stores"
   add_foreign_key "store_taxes", "taxes"
   add_foreign_key "stores", "assemblies"
+  add_foreign_key "stores", "authors"
   add_foreign_key "stores", "communities"
   add_foreign_key "stores", "sectors"
   add_foreign_key "stores", "sub_districts"
-  add_foreign_key "stores", "users"
-  add_foreign_key "taxes", "users"
+  add_foreign_key "taxes", "authors"
 end

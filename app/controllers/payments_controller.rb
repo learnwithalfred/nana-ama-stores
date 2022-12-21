@@ -2,8 +2,8 @@
 
 class PaymentsController < ApplicationController
   before_action :set_payment, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  before_action :authenticate_author!
+  # load_and_authorize_resource
 
   # GET /payments or /payments.json
   def index
@@ -34,7 +34,7 @@ class PaymentsController < ApplicationController
 
   # POST /payments or /payments.json
   def create
-    @payment = Payment.new(payment_params.merge(user: current_user))
+    @payment = Payment.new(payment_params.merge(author: current_author))
 
     respond_to do |format|
       if @payment.save

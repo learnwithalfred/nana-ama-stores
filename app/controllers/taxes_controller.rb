@@ -2,8 +2,8 @@
 
 class TaxesController < ApplicationController
   before_action :set_tax, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  before_action :authenticate_author!
+  # load_and_authorize_resource
 
   # GET /taxes or /taxes.json
   def index
@@ -26,7 +26,7 @@ class TaxesController < ApplicationController
 
   # POST /taxes or /taxes.json
   def create
-    @tax = Tax.new(tax_params.merge(user: current_user))
+    @tax = Tax.new(tax_params.merge(author: current_author))
 
     respond_to do |format|
       if @tax.save
