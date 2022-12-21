@@ -48,18 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "stocks", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "serial_number", null: false
-    t.integer "quantity", null: false
-    t.string "received_from", null: false
-    t.bigint "user_id", null: false
-    t.text "descriptiopn", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_stocks_on_user_id"
-  end
-
   create_table "store_taxes", force: :cascade do |t|
     t.bigint "store_id", null: false
     t.bigint "tax_id", null: false
@@ -130,7 +118,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
   add_foreign_key "payments", "stores"
   add_foreign_key "payments", "taxes"
   add_foreign_key "payments", "users"
-  add_foreign_key "stocks", "users"
   add_foreign_key "store_taxes", "stores"
   add_foreign_key "store_taxes", "taxes"
   add_foreign_key "stores", "assemblies"
