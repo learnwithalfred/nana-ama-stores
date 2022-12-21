@@ -1,52 +1,38 @@
 # frozen_string_literal: true
 
-# 10.times do
-#   Assembly.create!(
-#     [{
-#       name: Faker::Address.state,
-#     }]
-#   )
-# end
+3.times do
+  Assembly.create!(
+    [{
+      name: Faker::Address.state,
+    }]
+  )
+end
 
-# 10.times do
-#   Community.create!(
-#     [{
-#       name: Faker::Nation.capital_city,
-#     }]
-#   )
-# end
+3.times do
+  Community.create!(
+    [{
+      name: Faker::Nation.capital_city,
+    }]
+  )
+end
 
-# 10.times do
-#   SubDistrict.create!(
-#     [{
-#       name: Faker::Nation.capital_city,
-#     }]
-#   )
-# end
+3.times do
+  SubDistrict.create!(
+    [{
+      name: Faker::Nation.capital_city,
+    }]
+  )
+end
 
-# 5.times do
-#   Sector.create!(
-#     [{
-#       name: Faker::Nation.capital_city,
-#     }]
-#   )
-# end
+3.times do
+  Sector.create!(
+    [{
+      name: Faker::Nation.capital_city,
+    }]
+  )
+end
 
-# admin_num = 0
-# 5.times do
-#   admin_num = admin_num + 1
-#   Author.create!(
-#     [{
-#       name: Faker::Name.name,
-#       email: "admin#{admin_num}@example.com",
-#       password: "secrete",
-#       password_confirmation: "secrete",
-#       gender: Faker::Gender.binary_type,
-#       address: Faker::Address.community,
-#       role: "admin",
-#     }]
-#   )
-# end
+
 
 5.times do
   Author.create!(
@@ -84,7 +70,7 @@ class_num = 100
   )
 end
 
-10.times do
+5.times do
   Tax.create!(
     [{
       author_id: Author.where(role: "collector").sample.id,
@@ -97,7 +83,7 @@ end
   )
 end
 
-100.times do
+50.times do
   Payment.create!(
     [{
       author_id: Author.where(role: "collector").sample.id,
@@ -109,4 +95,4 @@ end
   )
 end
 
-Author.create(name:"Nana Ama Boateng", email:"nana@example.com", password:"password", password_confirmation:"password",role:"admin")
+Author.create(name:"Nana Ama Boateng", email:"admin1@test.com", password:"secrete", password_confirmation:"secrete",role:"admin")
