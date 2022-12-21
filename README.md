@@ -19,7 +19,7 @@
 
 ## Live link
 
-`https://nana-ama-stores.onrender.com`
+[Website Live link](https://nana-ama-stores.onrender.com)
 
 
 ## Login Credentials
@@ -33,7 +33,7 @@
 
 ## Preview Video
 
-`https://youtu.be/BmYaJRVheeM`
+[Project walk throgh video](https://youtu.be/BmYaJRVheeM)
 
 ## Getting Started 🙌
 
@@ -41,30 +41,27 @@ To get a local copy, run follow make sure you have installed the prerequisite an
 
 ```
 
-git clone https://github.com/learnwithalfred/furry-invention.git
-cd furry-invention
+git clone https://github.com/learnwithalfred/fnana-ama-stores.git
+cd nana-ama-stores
 bundle install
 yarn install
 rails db:create
 rails db:migrate
 rails db:seed
-./bin/dev
+bin/dev
 
 ```
 
 ## Start application
 
-`./bin/dev`
+`bin/dev`
 
 
 ## Accounts
 
 - Admin Account
-  - email: admin@test.com
-  - password: password
-- Tax collector
-  - email: collector@test.com
-  - password: password
+  - email: admin1@test.com
+  - password: secrete
 
 👤 **Alfred Boateng**
 
