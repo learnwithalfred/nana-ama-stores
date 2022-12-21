@@ -1,36 +1,36 @@
 # frozen_string_literal: true
 
-# 10.times do
-#   Assembly.create!(
-#     [{
-#       name: Faker::Address.state,
-#     }]
-#   )
-# end
+10.times do
+  Assembly.create!(
+    [{
+      name: Faker::Address.state,
+    }]
+  )
+end
 
-# 10.times do
-#   Community.create!(
-#     [{
-#       name: Faker::Nation.capital_city,
-#     }]
-#   )
-# end
+10.times do
+  Community.create!(
+    [{
+      name: Faker::Nation.capital_city,
+    }]
+  )
+end
 
-# 10.times do
-#   SubDistrict.create!(
-#     [{
-#       name: Faker::Nation.capital_city,
-#     }]
-#   )
-# end
+10.times do
+  SubDistrict.create!(
+    [{
+      name: Faker::Nation.capital_city,
+    }]
+  )
+end
 
-# 5.times do
-#   Sector.create!(
-#     [{
-#       name: Faker::Nation.capital_city,
-#     }]
-#   )
-# end
+5.times do
+  Sector.create!(
+    [{
+      name: Faker::Nation.capital_city,
+    }]
+  )
+end
 
 admin_num = 1
 5.times do
@@ -48,7 +48,7 @@ admin_num = 1
   )
 end
 
-40.times do
+10.times do
   User.create!(
     [{
       name: Faker::Name.name,
@@ -63,7 +63,7 @@ end
 end
 
 class_num = 100
-300.times do
+50.times do
   class_num = class_num + 1
   Store.create!(
     [{
@@ -84,7 +84,7 @@ class_num = 100
   )
 end
 
-300.times do
+100.times do
   Tax.create!(
     [{
       user_id: User.where(role: "collector").sample.id,
@@ -97,7 +97,7 @@ end
   )
 end
 
-200.times do
+400.times do
   Payment.create!(
     [{
       user_id: User.where(role: "collector").sample.id,
