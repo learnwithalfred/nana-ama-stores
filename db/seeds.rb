@@ -32,21 +32,21 @@
 #   )
 # end
 
-# admin_num = 0
-# 5.times do
-#   admin_num = admin_num + 1
-#   User.create!(
-#     [{
-#       name: Faker::Name.name,
-#       email: "admin#{admin_num}@test.com",
-#       password: "secrete",
-#       password_confirmation: "secrete",
-#       gender: Faker::Gender.binary_type,
-#       address: Faker::Address.community,
-#       role: "admin",
-#     }]
-#   )
-# end
+admin_num = 0
+5.times do
+  admin_num = admin_num + 1
+  User.create!(
+    [{
+      name: Faker::Name.name,
+      email: "admin#{admin_num}@example.com",
+      password: "secrete",
+      password_confirmation: "secrete",
+      gender: Faker::Gender.binary_type,
+      address: Faker::Address.community,
+      role: "admin",
+    }]
+  )
+end
 
 # 5.times do
 #   User.create!(
@@ -109,4 +109,4 @@
 #   )
 # end
 
-User.create(name:"Nana Ama Boateng", email:"admin@test.com", password:"secrete", password_confirmation:"secrete",role:"admin")
+User.create(name:"Nana Ama Boateng", email:"nana@example.com", password:"password", password_confirmation:"password",role:"admin")
