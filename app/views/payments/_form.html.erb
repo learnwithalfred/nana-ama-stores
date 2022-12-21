@@ -1,41 +1,43 @@
 <%= form_with(model: payment, class: "contents") do |form| %>
-  <% if payment.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+<% if payment.errors.any? %>
+<div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+  <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
 
-      <ul>
-        <% payment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="my-5">
-    <%= form.label :tax_id %>
-    <div class="mt-1 rounded-md shadow-sm">
-      <%=form.collection_select :tax_id, Tax.order(:name), :id, :name , class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" %>
-    </div>
+  <ul>
+    <% payment.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="my-5">
+  <%= form.label :tax_id %>
+  <div class="mt-1 rounded-md shadow-sm">
+    <%=form.collection_select :tax_id, Tax.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
+
   </div>
+</div>
 
-    <div class="my-5">
-    <%= form.label :store_id %>
-        <div class="mt-1 rounded-md shadow-sm">
-      <%=form.collection_select :store_id, Store.order(:serial_number), :id, :serial_number , class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" %>
-    </div>
+<div class="my-5">
+  <%= form.label :store_id %>
+  <div class="mt-1 rounded-md shadow-sm">
+    <%=form.collection_select :store_id, Store.order(:serial_number), :id, :serial_number ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
+
   </div>
+</div>
 
-  <div class="my-5">
-    <%= form.label :amount %>
-    <%= form.number_field :amount, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :amount %>
+  <%= form.number_field :amount, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
 
-  <div class="my-5">
-    <%= form.label :payee %>
-    <%= form.text_field :payee, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :payee %>
+  <%= form.text_field :payee, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
+<div class="inline">
+  <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+</div>
 <% end %>
