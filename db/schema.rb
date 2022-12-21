@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_04_105013) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_21_084537) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +46,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_105013) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "serial_number", null: false
+    t.integer "quantity", null: false
+    t.string "received_from", null: false
+    t.bigint "user_id", null: false
+    t.text "descriptiopn", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 
   create_table "store_taxes", force: :cascade do |t|
@@ -105,7 +115,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_105013) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
-    t.string "gender", null: false
+    t.string "gender"
     t.string "address"
     t.integer "role", default: 0, null: false
     t.string "reset_password_token"
@@ -120,6 +130,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_105013) do
   add_foreign_key "payments", "stores"
   add_foreign_key "payments", "taxes"
   add_foreign_key "payments", "users"
+  add_foreign_key "stocks", "users"
   add_foreign_key "store_taxes", "stores"
   add_foreign_key "store_taxes", "taxes"
   add_foreign_key "stores", "assemblies"
