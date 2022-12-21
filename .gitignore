@@ -31,7 +31,7 @@ test/fixtures
 /public/packs-test
 
 # Ignore master key for decrypting credentials and more
-/config/master.key
+# /config/master.key
 
 # Ignore environment variables
 /.env
