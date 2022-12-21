@@ -1,86 +1,86 @@
 <%= form_with(model: store, class: "contents") do |form| %>
-  <% if store.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(store.errors.count, "error") %> prohibited this store from being saved:</h2>
+<% if store.errors.any? %>
+<div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+  <h2><%= pluralize(store.errors.count, "error") %> prohibited this store from being saved:</h2>
 
-      <ul>
-        <% store.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% store.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="my-5">
-    <%= form.label :assembly_id %>
-        <div class="mt-1 rounded-md shadow-sm">
-      <%=form.collection_select :assembly_id, Assembly.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
+<div class="my-5">
+  <%= form.label :assembly_id %>
+  <div class="mt-1 rounded-md shadow-sm">
+    <%=form.collection_select :assembly_id, Assembly.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
 
-    </div>
   </div>
+</div>
 
-  <div class="my-5">
-    <%= form.label :sub_district_id %>
-      <div class="mt-1 rounded-md shadow-sm">
-      <%=form.collection_select :sub_district_id, SubDistrict.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
-    </div>
+<div class="my-5">
+  <%= form.label :sub_district_id %>
+  <div class="mt-1 rounded-md shadow-sm">
+    <%=form.collection_select :sub_district_id, SubDistrict.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
   </div>
+</div>
 
-  <div class="my-5">
-    <%= form.label :community_id %>
-        <div class="mt-1 rounded-md shadow-sm">
-      <%=form.collection_select :community_id, Community.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
-    </div>
+<div class="my-5">
+  <%= form.label :community_id %>
+  <div class="mt-1 rounded-md shadow-sm">
+    <%=form.collection_select :community_id, Community.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
   </div>
+</div>
 
-  <div class="my-5">
-    <%= form.label :sector_id %>
-            <div class="mt-1 rounded-md shadow-sm">
-      <%=form.collection_select :sector_id, Sector.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
-    </div>
+<div class="my-5">
+  <%= form.label :sector_id %>
+  <div class="mt-1 rounded-md shadow-sm">
+    <%=form.collection_select :sector_id, Sector.order(:name), :id, :name ,{}, { "class" => "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 " }%>
   </div>
+</div>
 
-  <div class="my-5">
-    <%= form.label :serial_number %>
-    <%= form.text_field :serial_number, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :serial_number %>
+  <%= form.text_field :serial_number, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
-  <div class="my-5">
-    <%= form.label :digital_address %>
-    <%= form.text_field :digital_address, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :digital_address %>
+  <%= form.text_field :digital_address, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
-  <div class="my-5">
-    <%= form.label :purpose_of_structure %>
-    <%= form.text_field :purpose_of_structure, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :purpose_of_structure %>
+  <%= form.text_field :purpose_of_structure, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
-  <div class="my-5">
-    <%= form.label :mode_of_structure %>
-    <%= form.text_field :mode_of_structure, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :mode_of_structure %>
+  <%= form.text_field :mode_of_structure, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
-  <div class="my-5">
-    <%= form.label :materials_used_for_walls %>
-    <%= form.text_field :materials_used_for_walls, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :materials_used_for_walls %>
+  <%= form.text_field :materials_used_for_walls, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
-  <div class="my-5">
-    <%= form.label :address %>
-    <%= form.text_area :address, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :address %>
+  <%= form.text_area :address, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
-  <div class="my-5">
-    <%= form.label :is_there_network_mast %>
-    <%= form.check_box :is_there_network_mast, class: "block mt-2 h-5 w-5" %>
-  </div>
+<div class="my-5">
+  <%= form.label :is_there_network_mast %>
+  <%= form.check_box :is_there_network_mast, class: "block mt-2 h-5 w-5" %>
+</div>
 
-  <div class="my-5">
-    <%= form.label :comments %>
-    <%= form.text_area :comments, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+<div class="my-5">
+  <%= form.label :comments %>
+  <%= form.text_area :comments, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
 
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
+<div class="inline">
+  <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+</div>
 <% end %>
