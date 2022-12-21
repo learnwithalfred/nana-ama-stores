@@ -12,7 +12,7 @@ class CommunitiesController < ApplicationController
 
   # GET /communities/1 or /communities/1.json
   def show
-    @stores = Store.where(community_id: params[:id])
+    @stores = Store.where(community_id: params[:id]).paginate(page: params[:page], per_page: 8)
   end
 
   # GET /communities/new

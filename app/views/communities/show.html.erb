@@ -4,9 +4,13 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
   <p class="my-5">
-    <%= @community.name %>
+
+     <div class="max-w-9xl mx-auto py-4 px-4 sm:px-6 lg:py-4 lg:px-4 lg:flex lg:items-center lg:justify-between">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
+            <%= @community.name %> Community
+          </h2>
+        </div>
   </p>
-    <%= link_to 'Edit this community', edit_community_path(@community), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
 
@@ -18,7 +22,7 @@
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">
             <span class="block">
               <% if @stores.length > 0 %>
-              <%= @stores[1].sub_district.name %> <%= @community.name %>
+              <%= @community.name %>
               <% end %>
               Stores List</span>
           </h2>
@@ -74,6 +78,17 @@
                   <% end %>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+        <div class="text-center my-4">
+        <div role="navigation" aria-label="Pagination"
+          class="px-3 py-2 mx-2 text-gray-700 no-underline bg-white rounded-lg">
+          <div class="flickr_pagination">
+            <div class="">
+              <%= page_entries_info @stores %>
+            </div>
+            <%= will_paginate @stores %>
           </div>
         </div>
       </div>
