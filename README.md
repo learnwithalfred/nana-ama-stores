@@ -19,17 +19,17 @@
 
 ## Live link
 
-`https://nana-ama.herokuapp.com/`
+`https://nana-ama-stores.onrender.com`
 
 
 ## Login Credentials
 
 - Admin Account
-  - Email: `admin_001@test.com`
-  - Password: `password`
+  - Email: `admin1@test.com`
+  - Password: `secrete`
 - Other Accounts - User, Collector, IT, etc.
-  - Email can be found at `https://nana-ama.herokuapp.com/users/index`
-  - Password for all seeded acconts: `password`
+  - Email can be found at `https://nana-ama-stores.onrender.com/users/index`
+  - Password for all seeded acconts: `secrete`
 
 ## Preview Video
 
