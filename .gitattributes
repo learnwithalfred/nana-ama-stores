@@ -7,5 +7,3 @@ db/schema.rb linguist-generated
 # vendor/* linguist-vendored
 
 *.html linguist-detectable=false
-*.css linguist-detectable=false
-*.ruby linguist-detectable=true
